@@ -26,6 +26,7 @@ jobs:
     - run: ls -lah
     - run: npm install yarn
     - run: yarn install
+    - run: ls -lah
     - uses: actions/checkout@v2
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1
