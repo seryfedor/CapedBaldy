@@ -6,13 +6,17 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<center>
+
   <h1>Contacts:</h1>
   <form action="/" method="POST">
     <label for="message">Your message:</label>
     <input type="text" id="message" name="message"><input type="submit" value="Submit">
   </form>
-  <img src="tatsumaki.png"/>
-</center>
+  <% if (alert == 'ok') { %>
+    <img src="ok.png" width="30%" height="30%"/>
+  <% } else { %>
+    <img src="tatsumaki.png"/>
+  <% } %>
+
 </body>
 </html>
