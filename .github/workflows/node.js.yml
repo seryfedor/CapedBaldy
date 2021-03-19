@@ -30,7 +30,7 @@ jobs:
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avz --delete
+        switches: -avzr --exclude='.*'
         path: ./
         remote_path: ~/release
         remote_host: ${{ secrets.HOST }}
