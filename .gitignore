@@ -119,3 +119,6 @@ dist
 
 # idea
 /.idea/
+
+# github
+.github/
