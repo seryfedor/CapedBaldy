@@ -32,8 +32,8 @@ jobs:
       uses: burnett01/rsync-deployments@4.1
       with:
         switches: -avzr 
-        path: .
-        remote_path: ~/release
+        path: node_modules/
+        remote_path: ~/release/node_modules/
         remote_host: ${{ secrets.HOST }}
         remote_port: ${{ secrets.PORT }}
         remote_user: ${{ secrets.USERNAME }}
