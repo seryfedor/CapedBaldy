@@ -31,8 +31,8 @@ jobs:
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzr --exclude='.*'
-        path: ./
+        switches: -avzr 
+        path: .
         remote_path: ~/release
         remote_host: ${{ secrets.HOST }}
         remote_port: ${{ secrets.PORT }}
