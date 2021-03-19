@@ -26,3 +26,14 @@ jobs:
     - run: ls -lah
     - run: npm install yarn
     - run: yarn install
+    - uses: actions/checkout@v2
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avz --delete
+        path: ./
+        remote_path: ~/release
+        remote_host: ${{ secrets.HOST }}
+        remote_port: ${{ secrets.PORT }}
+        remote_user: ${{ secrets.USERNAME }}
+        remote_key: ${{ secrets.SECRET_KEY }}
