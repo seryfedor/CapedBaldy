@@ -12,7 +12,15 @@ router.post('/', (req,res) => {
   console.log(req.body.message)
 
   var getUri = require('get-uri');
-  getUri('https://api.telegram.org/bot' + process.env.TELEGRAM_TOKEN + '/sendMessage?chat_id=' + process.env.TELEGRAM_CHAT_ID + '&text=' + req.body.message)
+  //getUri('https://api.telegram.org/bot' + process.env.TELEGRAM_TOKEN + '/sendMessage?chat_id=' + process.env.TELEGRAM_CHAT_ID + '&text=' + req.body.message)
+
+  var url = require("url");
+  var link = 'https://api.telegram.org/bot' + process.env.TELEGRAM_TOKEN + '/sendMessage?chat_id=' + process.env.TELEGRAM_CHAT_ID + '&text=' + req.body.message
+  var parts = url.parse(link, true);
+  parts.query.page++;
+  delete parts.search;
+  getUri(url.format(parts))
+  console.log(url.format(parts));
 
   res.redirect(301,'/?msg=ok')
 })
