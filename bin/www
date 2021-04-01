@@ -10,8 +10,6 @@ var http = require('http');
 
 // //db imports
 var mongooseService = require('../services/mongoose.js')
-var mongoose = require('mongoose')
-var URLS = require("../services/URL.schema");
 
 /**
  * Get port from environment and store in Express.
