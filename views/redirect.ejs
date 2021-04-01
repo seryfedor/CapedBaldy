@@ -1,0 +1,50 @@
+<%# created by valik %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+
+ <script>
+var myVar = '<%- pass %>'
+    var pass = prompt("Enter the Password:", "");
+    if (pass == null)  window.location = "/";
+    else if (pass.toLowerCase() == myVar)
+{
+      console.log("goodluck")
+    }
+    else  window.location = "/";
+  </script>
+<body>
+  <h1>Redirect:</h1>
+  <form action="/r" method="POST">
+    <label for="site">Your new site:</label>
+    <input type="text" id="site" name="site">
+    <label for="redirect">Your redirect site:</label>
+    <input type="text" id="redirect" name="redirect">
+
+    <input type="submit" value="Send">
+  </form>
+
+ <table border="1">
+    <% for(var i=0; i<arrayUrls.length;i++) {%>
+    <tr>
+      <td><%= arrayUrls[i]._id %></td>
+      <td><%= arrayUrls[i].site %></td>
+      <td><a href="/r/<%= arrayUrls[i].urlRedirect %>"> <%= arrayUrls[i].urlRedirect %></a></td>
+      <td><a href="/r/delete/<%= arrayUrls[i]._id %>">del</a></td>
+      <td>
+        <form action="/r/update/<%= arrayUrls[i]._id %>" method="POST">
+          <input type="text" required id="newredirect" name="newredirect">
+          <input type="submit" value="update">
+        </form>
+      </td>
+    </tr>
+
+    <%} %>
+  </table>
+</body>
+</html>

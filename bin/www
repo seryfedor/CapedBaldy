@@ -8,11 +8,15 @@ var app = require('../app');
 var debug = require('debug')('com:server');
 var http = require('http');
 
+// //db imports
+var mongooseService = require('../services/mongoose.js')
+
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3001');
+mongooseService.connect()
 app.set('port', port);
 
 /**
