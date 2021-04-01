@@ -13,18 +13,6 @@ var mongooseService = require('../services/mongoose.js')
 var mongoose = require('mongoose')
 var URLS = require("../services/URL.schema");
 
-// const ur = new URLS({
-//   site: "123123",
-//   urlRedirect: "rrrr",
-// });
-
-// ur.save((err) => {
-//       mongoose.disconnect(); // отключение от базы данных
-
-//       if (err) return console.log(err);
-//       console.log("Сохранен объект", ur);
-// })
-
 /**
  * Get port from environment and store in Express.
  */
