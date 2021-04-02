@@ -6,6 +6,6 @@ const urlSchema = new Schema({
   urlRedirect: String
 })
 
-var doc = mongoose.model("url", urlSchema);
+var doc = mongoose.model("urls", urlSchema);
 
 module.exports = doc;
